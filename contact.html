@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CREDIT-UNIT</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>CREDIT-UNIT - Contactez-nous</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+            <a href="assurance.html"><i class="fas fa-shield-alt"></i> Assurance</a>
+            <a href="pret.html"><i class="fas fa-hand-holding-usd"></i> Demande de Prêt</a>
+            <a href="service.html"><i class="fas fa-cogs"></i> Service</a>
+            <a href="apropos.html"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+    <style>
+        /* Styles améliorés */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-weight: 600;
+            color: #004a7c;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            background: #004a7c;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: #003459;
+        }
+
+        .form-confirmation {
+            display: none;
+            color: #28a745;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+    
+    <div class="contact-form">
+        <h2><i class="fas fa-envelope"></i> Nous écrire</h2>
+        <form id="contactForm" action="https://formspree.io/f/xyzkjaaw" method="POST" enctype="multipart/form-data">
+            <input type="hidden" name="_subject" value="Nouveau message de contact - CREDIT-UNIT">
+            
+            <div class="form-group">
+                <label for="name"><i class="fas fa-user"></i> Nom :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fas fa-envelope"></i> Email :</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="subject"><i class="fas fa-tag"></i> Sujet :</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message"><i class="fas fa-comment"></i> Message :</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Envoyer</button>
+            <div class="form-confirmation" id="confirmationMessage">Message envoyé avec succès !</div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    confirmationMessage.style.display = 'block';
+                    setTimeout(() => {
+                        confirmationMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Une erreur est survenue, veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Erreur de connexion');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer';
+            }
+        });
+    </script>
+
+    <!--section class="contact-info">
+        <h3>Informations de Contact</h3>
+        <p>
+            <strong>Téléphone :</strong> num<br>
+            <strong>Email :</strong> mail<br>
+            <strong>Adresse :</strong> 123 Rue de la Banque, 75000 Paris
+        </p>
+    </section-->
+
+    <footer>
+        <div class="footer-links">
+            <a href="securite.html"><i class="fas fa-user-shield"></i>Politique de Sécurité</a>
+            <a href="pq.html"><i class="fas fa-user-shield"></i>Politique de confidentialité</a>
+            <a href="condition.html"><i class="fas fa-file-contract"></i> Conditions Générales</a>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 CREDIT-UNIT. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

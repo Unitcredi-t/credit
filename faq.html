@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - CREDIT-UNIT</title>
+    <link rel="stylesheet" href="faq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Styles FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #004a7c;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .contact-support {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .faq-question {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CREDIT-UNIT - Foire Aux Questions</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+            <a href="faq.html" class="active"><i class="fas fa-question-circle"></i> FAQ</a>
+            <!-- Ajoutez les autres liens de navigation -->
+        </nav>
+    </header>
+
+    <div class="faq-container">
+        <div class="faq-header">
+            <h2><i class="fas fa-comments"></i> Questions Fréquentes</h2>
+            <p>Trouvez des réponses aux questions les plus courantes</p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Comment faire la demande de prêt ?</span>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Pour fait une demande de prêt chez CREDIT-UNIT :</p>
+                <ol>
+                    <li>Rendez-vous dans la page de demande de prêt</li>
+                    <li>Complétez le formulaire d'inscription</li>
+                    <li>Notre service vous contactera dans les 48H qui suivent</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quels documents pour une demande de prêt ?</span>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Les documents nécessaires incluent :</p>
+                <ul>
+                    <li>Pièce d'identité en cours de validité</li>
+                    <li>3 dernières fiches de paie</li>
+                    <li>Avis d'imposition récent</li>
+                    <li>Justificatif de domicile</li>
+                </ul>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Quelles sont les limites de virement ?</span>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Les limites dépendent de votre type de compte :</p>
+                <table>
+                    <tr>
+                        <th>Type de compte</th>
+                        <th>Limite quotidienne</th>
+                        <th>Limite mensuelle</th>
+                    </tr>
+                    <tr>
+                        <td>Standard</td>
+                        <td>5 000€</td>
+                        <td>15 000€</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>15 000€</td>
+                        <td>50 000€</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="contact-support">
+            <h3>Vous ne trouvez pas de réponse ?</h3>
+            <p>Notre équipe support est disponible pour vous aider</p>
+            <a href="contact.html" class="btn"><i class="fas fa-headset"></i> Contacter le support</a>
+        </div>
+    </div>
+
+    <script>
+        // Script pour l'interactivité des FAQ
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const answer = parent.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + 'px';
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-links">
+            <a href="securite.html"><i class="fas fa-user-shield"></i>Politique de Sécurité</a>
+            <a href="pq.html"><i class="fas fa-user-shield"></i>Politique de confidentialité</a>
+            <a href="condition.html"><i class="fas fa-file-contract"></i> Conditions Générales</a>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 CREDIT-UNIT. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

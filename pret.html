@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Prêt - CREDIT-UNIT</title>
+    <link rel="stylesheet" href="pret.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="CREDIT-UNIT">
+            <div class="bank-name">CREDIT-UNIT</div>
+        </div>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> Accueil</a>
+            <a href="assurance.html"><i class="fas fa-shield-alt"></i> Assurance</a>
+            <a href="pret.html" class="active"><i class="fas fa-hand-holding-usd"></i> Demande de Prêt</a>
+            <a href="service.html"><i class="fas fa-cogs"></i> Service</a>
+            <a href="apropos.html"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="loan-request">
+            <h2>Demande de Prêt</h2>
+            <p>Remplissez le formulaire ci-dessous pour soumettre votre demande de prêt.</p>
+            <form id="contactForm" action="https://formspree.io/f/xgvoybbn" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle demande de prêt - CREDIT-UNIT">
+                <input type="hidden" name="_language" value="fr">
+                <input type="text" name="_gotcha" style="display:none;">
+                <div class="form-group">
+                    <label for="name">Nom complet :</label>
+                    <input type="text" id="name" name="name" placeholder="Entrez votre nom complet" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+                </div>
+                <div class="form-group">
+                    <label for="birth-certificate">Numéro d'acte de naissance :</label>
+                    <input type="text" id="birth-certificate" name="birth-certificate" placeholder="Exemple : 123456789" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Numéro de téléphone :</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Exemple : +33 6 12 34 56 78" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Pays :</label>
+                    <input type="text" id="country" name="country" placeholder="Exemple : France" required>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Montant du prêt (en EURO) :</label>
+                    <input type="number" id="amount" name="amount" placeholder="Exemple : 500000" required>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Motif du prêt :</label>
+                    <textarea id="reason" name="reason" rows="4" placeholder="Expliquez pourquoi vous avez besoin du prêt" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Durée de remboursement (en mois) :</label>
+                    <select id="duration" name="duration" required>
+                        <option value="">-- Choisissez une durée --</option>
+                        <option value="6">6 mois</option>
+                        <option value="12">12 mois</option>
+                        <option value="24">24 mois</option>
+                        <option value="36">36 mois</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Envoyer la demande</button>
+            </form>
+            <p id="confirmationMessage" style="display:none; color:green;">Votre demande a été envoyée avec succès.</p>
+        </section>
+    </main>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const submitButton = form.querySelector('button[type="submit"]');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+
+            submitButton.disabled = true;
+            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.reset();
+                    confirmationMessage.style.display = 'block';
+                    setTimeout(() => {
+                        confirmationMessage.style.display = 'none';
+                    }, 5000);
+                } else {
+                    alert('Une erreur est survenue, veuillez réessayer.');
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                alert('Erreur de connexion');
+            } finally {
+                submitButton.disabled = false;
+                submitButton.innerHTML = '<i class="fas fa-paper-plane"></i> Envoyer la demande';
+            }
+        });
+    </script>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="securite.html"><i class="fas fa-user-shield"></i>Politique de Sécurité</a>
+            <a href="pq.html"><i class="fas fa-user-shield"></i>Politique de confidentialité</a>
+            <a href="mention.html"><i class="fas fa-balance-scale"></i> Mentions Légales</a>
+            <a href="condition.html"><i class="fas fa-file-contract"></i> Conditions Générales</a>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 CREDIT-UNIT. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

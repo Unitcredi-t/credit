@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - CREDIT-UNIT</title>
+    <link rel="stylesheet" href="acceuil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="CREDIT-UNIT">
+            <div class="bank-name">CREDIT-UNIT</div>
+        </div>
+        <nav>
+            <a href="index.html" class="active"><i class="fas fa-home"></i> Accueil</a>
+            <a href="assurance.html"><i class="fas fa-shield-alt"></i> Assurance</a>
+            <a href="pret.html"><i class="fas fa-hand-holding-usd"></i> Demande de Prêt</a>
+            <a href="service.html"><i class="fas fa-cogs"></i> Service</a>
+            <a href="apropos.html"><i class="fas fa-info-circle"></i> À propos</a>
+            <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Bienvenue à CREDIT-UNIT</h2>
+        <p>Découvrez nos solutions de financement adaptées à tous vos projets. Sécurisez vos finances avec notre expertise bancaire.</p>
+        <a href="service.html" class="btn">Explorer nos services</a>
+    </section>
+
+    <main>
+        <section id="features">
+            <div class="feature">
+                <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+                <h3>Services sur Mesure</h3>
+                <p>Bénéficiez de solutions personnalisées adaptées à vos besoins financiers.</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h3>Sécurité Maximale</h3>
+                <p>Nos systèmes sont conçus pour garantir la sécurité de vos données bancaires.</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Service Rapide</h3>
+                <p>Traitement rapide de vos demandes avec des réponses sous 48 heures.</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-handshake"></i></div>
+                <h3>Support 24/7</h3>
+                <p>Nos conseillers sont disponibles à tout moment pour vous accompagner.</p>
+            </div>
+        </section>
+        <section id="offer">
+            <div class="offer">
+                <center>
+                    <h4>Nos Offres</h4>
+                </center>
+            </div>
+        </section>
+        <section id="features">
+            <div class="feature">
+                <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+                <h3>Crédit à la Consommation</h3>
+                <p>Obtenez un prêt flexible pour réaliser vos projets personnels</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-lock"></i></div>
+                <h3>Épargne & Investissement</h3>
+                <p>Maximisez vos économies avec nos solutions d’épargne avantageuses.</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-clock"></i></div>
+                <h3>Prêt aux Entreprises</h3>
+                <p>Financement adapté aux professionnels et aux PME.</p>
+            </div>
+            <div class="feature">
+                <div class="icon"><i class="fas fa-handshake"></i></div>
+                <h3>Comptes Bancaires</h3>
+                <p>Ouvrez un compte bancaire adapté à vos besoins et bénéficiez de nombreux avantages.</p>
+            </div>
+        </section>
+        <section id="testimonials">
+            <h3>Ce que disent nos clients</h3>
+            <div class="testimonial">
+                <i class="fas fa-user-circle"></i>
+                <p>"CREDIT-UNIT m'a aidé à financer mon projet immobilier avec un excellent service client!"</p>
+                <strong>- Jean Dupont</strong>
+            </div>
+            <div class="testimonial">
+                <i class="fas fa-user-circle"></i>
+                <p>"Leur plateforme en ligne est intuitive et leurs offres sont très attractives."</p>
+                <strong>- Marie Lefevre</strong>
+            </div>
+        </section>
+        <!-- Formulaire de demande de prêt amélioré -->
+<div class="loan-form">
+    <h3>Formulaire de Demande de Prêt</h3>
+    <form id="loanApplication" action="https://formspree.io/f/mgvoyqnw" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="Nouvelle demande de prêt - CREDIT-UNIT">
+        <input type="hidden" name="_language" value="fr">
+        <input type="text" name="_gotcha" style="display:none;">
+        <div class="form-columns">
+            <div class="form-column">
+                <!-- Section Information Personnelle -->
+                <fieldset>
+                    <legend><i class="fas fa-user"></i> Information Personnelle</legend>
+                    <div class="form-group">
+                        <label for="fullName">Nom Complet :</label>
+                        <input type="text" id="fullName" name="Nom complet" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="birthdate">Date de Naissance :</label>
+                        <input type="date" id="birthdate" name="Date de naissance" required>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="address">Adresse electronique :</label>
+                     <input type="email" id="adresse" name="adresse" required>
+                    </div>
+                </fieldset>
+
+                <!-- Section Situation Professionnelle -->
+                <fieldset>
+                    <legend><i class="fas fa-briefcase"></i> Situation Professionnelle</legend>
+                    <div class="form-group">
+                        <label for="employmentStatus">Situation Actuelle :</label>
+                        <select id="employmentStatus" required>
+                            <option value="salarie">Salarié</option>
+                            <option value="independant">Indépendant</option>
+                            <option value="retraite">Retraité</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="monthlyIncome">Revenu Mensuel Net (€) :</label>
+                        <input type="number" id="monthlyIncome" min="0" step="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="employer">Employeur :</label>
+                        <input type="text" id="employer" name="employer">
+                    </div>
+                </fieldset>
+            </div>
+
+            <div class="form-column">
+                <!-- Section Détails du Prêt -->
+                <fieldset>
+                    <legend><i class="fas fa-euro-sign"></i> Détails du Prêt</legend>
+                    <div class="form-group">
+                        <label for="loanAmount">Montant du Prêt (€) :</label>
+                        <input type="number" id="loanAmount" min="1000" max="100000" step="500" 
+                               oninput="updateLoanAmount(this.value)" required>
+                        <output id="loanAmountValue">50 000€</output>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loanDuration">Durée (mois) :</label>
+                        <select id="loanDuration" required>
+                            <option value="12">1 an (12 mois)</option>
+                            <option value="60">5 ans (60 mois)</option>
+                            <option value="120">10 ans (120 mois)</option>
+                            <option value="240">20 ans (240 mois)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loanPurpose">Objectif du Prêt :</label>
+                        <select id="loanPurpose" required>
+                            <option value="immobilier">Achat Immobilier</option>
+                            <option value="voiture">Achat de Véhicule</option>
+                            <option value="travaux">Travaux</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <!-- Section Documents -->
+                <!--fieldset>
+                    <legend><i class="fas fa-file-upload"></i> Pièces Jointes</legend>
+                    <div class="form-group">
+                        <label for="identityDocument">Pièce d'identité :</label>
+                        <input type="file" id="identityDocument" name="Pièce d'identité" accept=".pdf,.jpg,.png" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proofIncome">Justificatif de revenu :</label>
+                        <input type="file" id="proofIncome" accept=".pdf,.jpg,.png" required>
+                    </div>
+                </fieldset>
+                <Section Confidentialité -->
+                <div class="form-check">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">J'accepte les <a href="#">conditions générales</a> et la 
+                    <a href="politique.html">politique de confidentialité</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn">
+                <i class="fas fa-paper-plane"></i> Soumettre la demande
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="resetForm()">
+                <i class="fas fa-undo"></i> Réinitialiser
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+.form-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: 600;
+    color: #004a7c;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+output {
+    display: block;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #004a7c;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .form-columns {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- Modifiez la balise form comme ceci -->
+
+    <!-- Ajoutez ces champs cachés -->
+
+
+    <!-- Modifiez les champs existants en ajoutant les attributs name -->
+    
+
+    <!-- Pour les fichiers -->
+    
+
+    <!-- Répétez pour tous les autres champs en ajoutant name -->
+</form>
+
+<!-- Modifiez le script comme ceci -->
+<script>
+async function handleLoanSubmission(event) {
+    event.preventDefault();
+    
+    // Validation
+    if (!document.getElementById('loanApplication').checkValidity()) {
+        alert('Veuillez remplir tous les champs obligatoires');
+        return;
+    }
+
+    // Envoi des données
+    const formData = new FormData(event.target);
+    
+    try {
+        const response = await fetch(event.target.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            showConfirmation();
+            calculateAmortization(event);
+            resetForm();
+        } else {
+            throw new Error('Erreur lors de l\'envoi');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Une erreur est survenue, veuillez réessayer plus tard.');
+    }
+}
+
+function resetForm() {
+    document.getElementById('loanApplication').reset();
+    document.getElementById('loanAmountValue').value = '50 000€';
+    document.getElementById('amortizationBody').innerHTML = '';
+}
+
+function showConfirmation() {
+    alert('Demande envoyée avec succès !\nUn conseiller vous contactera sous 48h.');
+}
+
+// Le reste du code reste inchangé
+</script>
+<!-- Ajoutez cette section après le formulaire -->
+<div class="amortization-table">
+    <h3>Tableau d'Amortissement</h3>
+    <div class="table-container">
+        <table id="amortizationTable">
+            <thead>
+                <tr>
+                    <th>Mois</th>
+                    <th>Mensualité</th>
+                    <th>Capital Remboursé</th>
+                    <th>Intérêts</th>
+                    <th>Capital Restant</th>
+                </tr>
+            </thead>
+            <tbody id="amortizationBody">
+                <!-- Les données seront injectées via JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+function calculateAmortization(event) {
+    event.preventDefault();
+    
+    // Récupération des valeurs du formulaire
+    const amount = parseFloat(document.getElementById('loanAmount').value);
+    const duration = parseInt(document.getElementById('loanDuration').value);
+    const annualRate = 4.5; // Taux fixe pour l'exemple (à adapter)
+
+    // Calcul du taux mensuel
+    const monthlyRate = annualRate / 100 / 12;
+    
+    // Calcul de la mensualité
+    const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -duration));
+    
+    let balance = amount;
+    let tableHTML = '';
+    
+    for(let month = 1; month <= duration; month++) {
+        const interest = balance * monthlyRate;
+        const principal = monthlyPayment - interest;
+        balance -= principal;
+
+        // Arrondir à 2 décimales
+        const displayBalance = Math.max(balance, 0).toFixed(2);
+        
+        tableHTML += `
+            <tr>
+                <td>${month}</td>
+                <td>${monthlyPayment.toFixed(2)}€</td>
+                <td>${principal.toFixed(2)}€</td>
+                <td>${interest.toFixed(2)}€</td>
+                <td>${displayBalance}€</td>
+            </tr>
+        `;
+    }
+    
+    document.getElementById('amortizationBody').innerHTML = tableHTML;
+}
+
+// Modifier la soumission du formulaire
+function handleLoanSubmission(event) {
+    event.preventDefault();
+    calculateAmortization(event);
+    
+    // Scroll vers le tableau
+    document.querySelector('.amortization-table').scrollIntoView({
+        behavior: 'smooth'
+    });
+    
+    // Votre logique d'envoi ici...
+}
+</script>
+
+<style>
+.amortization-table {
+    margin: 40px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.table-container {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #004a7c;
+    color: white;
+    position: sticky;
+    top: 0;
+}
+
+td, th {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+</style>
+        <section id="contact-quick">
+            <h3>Besoin d'une Assistance Rapide ?</h3>
+            <p>Notre équipe est disponible pour répondre à vos questions.</p>
+            <a href="contact.html" class="btn"><i class="fas fa-phone-alt"></i> Contactez-nous</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="securite.html"><i class="fas fa-user-shield"></i>Politique de Sécurité</a>
+            <a href="pq.html"><i class="fas fa-user-shield"></i>Politique de confidentialité</a>
+            <a href="condition.html"><i class="fas fa-file-contract"></i> Conditions Générales</a>
+            <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 CREDIT-UNIT. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

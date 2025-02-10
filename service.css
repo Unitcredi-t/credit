@@ -1,0 +1,304 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Header Styles */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    border-left: 60px;
+}
+
+header .logo img {
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 20px;
+}
+
+header .logo .bank-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background-color: rgba(15, 65, 13, 0.525);
+    padding: 12px 20px;
+    border-radius: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+    color: #f4a261;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #f4a261;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #003366, #56ab2f);
+    padding: 60px 20px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+}
+
+#hero h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+#hero p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+}
+
+/* Main Section */
+main {
+    padding: 40px 20px;
+}
+
+/* Services Section */
+#services {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+#services h3 {
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+/* Styling for the Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #004080;
+}
+
+/* Table row hover effect */
+tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#why-choose-us h3 {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 28px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+#why-choose-us ul {
+    list-style-type: square;
+    padding-left: 20px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Contact Us Section */
+#contact-us {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+#contact-us h3 {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 28px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+#contact-us p {
+    font-size: 16px;
+}
+
+/* Application Form */
+#apply-form {
+    padding: 40px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#apply-form h3 {
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 28px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+/* Form Input Styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 16px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #004080;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0,100,255,0.4);
+}
+
+/* Button Style */
+input[type="submit"] {
+    background-color: #003366;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #002244;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+}
