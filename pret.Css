@@ -21,15 +21,18 @@ header {
     background: #3498db;
     color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permet de s'ajuster aux petits écrans */
 }
 
 header .logo {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
+    flex: 1;
 }
 
 header .logo img {
-    height: 60px; /* Ajuste la taille pour mobile */
+    height: 60px;
     margin-right: 10px;
     border-radius: 20px;
 }
@@ -45,7 +48,7 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 15px;
     background-color: rgba(22, 45, 75, 0.389);
     padding: 12px 20px;
     border-radius: 20px;
@@ -119,7 +122,7 @@ label {
     color: #34495e;
 }
 
-input, textarea {
+input, textarea, select {
     width: 100%;
     padding: 10px;
     font-size: 1rem;
@@ -128,7 +131,7 @@ input, textarea {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus, textarea:focus, select:focus {
     border-color: #3498db;
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
     outline: none;
@@ -181,43 +184,27 @@ footer {
     }
 }
 
-/* Style du champ <select> */
-select {
-    width: 100%; /* S'adapte à la largeur de l'écran */
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #bdc3c7;
-    border-radius: 8px;
-    background: #ffffff;
-    color: #34495e;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%204%205'%3E%3Cpath%20fill='none'%20stroke='%2334495e'%20stroke-width='1.5'%20d='M1%201L2%203%203%201'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 10px;
-}
-
-select:focus {
-    border-color: #3498db;
-    box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
-    outline: none;
-}
-
 /* Responsiveness */
+
+/* Mobile styles */
 @media (max-width: 768px) {
+    header {
+        padding: 15px;
+    }
+
     header .logo img {
-        height: 50px; /* Taille réduite pour les petits écrans */
+        height: 50px;
     }
 
     nav {
         flex-direction: column;
         align-items: center;
+        padding: 10px;
     }
 
     nav a {
         font-size: 1rem;
-        padding: 8px 15px;
+        padding: 10px 15px;
     }
 
     main {
@@ -231,21 +218,19 @@ select:focus {
 
     button.btn {
         font-size: 1rem;
+        padding: 12px;
     }
 }
 
+/* Very small screens (phones in portrait mode) */
 @media (max-width: 480px) {
-    header {
-        padding: 10px;
-    }
-
-    nav {
-        gap: 15px;
-        padding: 10px 15px;
+    header .logo img {
+        height: 40px;
     }
 
     nav a {
         font-size: 0.9rem;
+        padding: 8px 10px;
     }
 
     main {
@@ -254,16 +239,12 @@ select:focus {
     }
 
     button.btn {
-        padding: 12px;
         font-size: 1rem;
     }
 }
 
+/* Extra small screens */
 @media (max-width: 400px) {
-    header .logo img {
-        height: 40px; /* Plus petit sur très petits écrans */
-    }
-
     #loan-request h2 {
         font-size: 1.6rem;
     }
